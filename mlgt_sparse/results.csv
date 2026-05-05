@@ -1,0 +1,9 @@
+Dataset   , Variant                 , Build (s), Latency (ms), Recall
+sparseFull, MinHash(Saffron)        ,    135.53,      2594.88, 0.9294
+sparseFull, MinHash(Global)         ,     76.50,        55.18, 0.9338
+Movielens , MinHash(Saffron)        ,     79.88,      3562.27, 0.7744
+Movielens , MinHash(Global)         ,    100.23,        16.15, 0.7744
+KDDB      , MinHash(Saffron)        ,    197.05,      3808.91, 0.3209
+KDDB      , MinHash(Global)         ,     81.31,        45.41, 0.3209
+Avazu-App , WeightedMinHash(Saffron),    150.99,      2750.66, 0.9860
+Avazu-App , WeightedMinHash(Global) ,     24.28,       153.68, 0.9860

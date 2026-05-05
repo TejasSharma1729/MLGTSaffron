@@ -1,0 +1,55 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Python files
+__pycache__
+__pycache__/*
+*.pt
+*.pth
+*.npy
+*.npz
+*.pyc
+*.pyi
+
+# Large files
+data/*
+data
+assets/*
+assets
+
+# Cache files
+.cache/*
+.cache
+.vscode/*
+.vscode
+.DS_Store

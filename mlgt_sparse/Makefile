@@ -11,7 +11,11 @@ SHARED := -shared
 
 # Pybind11 and Eigen configuration
 # Assuming assets/Eigen is at the project root
-INCLUDES := $(shell $(PYTHON) -m pybind11 --includes) -I../assets/ -Isrc/
+PYBIND11_INCLUDES := $(shell $(PYTHON) -m pybind11 --includes 2>/dev/null || true)
+ifeq ($(strip $(PYBIND11_INCLUDES)),)
+$(error pybind11 is required to build this extension. Install it in $(PYTHON) with: $(PYTHON) -m pip install pybind11)
+endif
+INCLUDES := $(PYBIND11_INCLUDES) -I../assets/ -Isrc/
 
 # Python library paths
 PYLIBDIR := $(shell $(PYTHON) -c 'import sysconfig; print(sysconfig.get_config_var("LIBDIR") or "")')

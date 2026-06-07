@@ -5,10 +5,10 @@ import os
 from tqdm import tqdm
 from argparse import ArgumentParser
 from typing import List, Tuple, Dict, Any
+from data_dir import DATASETS_DIR
 
 
-CUR_DIR: str = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR: str = os.path.join(CUR_DIR, "..", "data")
+DATA_DIR: str = DATASETS_DIR
 DATASETS: List[str] = ["sparse1M", "sparseFull", "movielens", "kddb", "avazu"]
 HASHER_TYPES = ["MinHasher", "WeightedMinHasher", "BloomHashFunction", "SparseSRPHasher", "DenseSRPHasher"]
 MLGT_SAFFRON_TYPES = ["MLGTSaffron" + suffix for suffix in ["Bloom", "MinHash", "WeightedMinHash", "SparseSRP", "DenseSRP"]]

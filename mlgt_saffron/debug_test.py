@@ -1,13 +1,14 @@
 import numpy as np
 import sys, os
 from typing import List, Set
+from data_dir import DATASETS_DIR
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(CUR_DIR)
 
 from mlgt_saffron import SaffronIndex, MLGTSaffron
 
 # Load small subset
-data_path = "../data/imagenet"
+data_path = os.path.join(DATASETS_DIR, "imagenet")
 dataset = np.load(os.path.join(data_path, "X.npy"))[:1000, :].astype(np.float32)
 query_set = np.load(os.path.join(data_path, "Q.npy"))[:10, :].astype(np.float32)
 

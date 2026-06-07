@@ -7,7 +7,10 @@ PYSTUB  := mlgt_saffron.pyi
 INIT_PY := __init__.py
 
 # Get Python configuration
-PY_INCLUDES := $(shell $(PYTHON) -m pybind11 --includes)
+PY_INCLUDES := $(shell $(PYTHON) -m pybind11 --includes 2>/dev/null || true)
+ifeq ($(strip $(PY_INCLUDES)),)
+$(error pybind11 is required to build this extension. Install it in $(PYTHON) with: $(PYTHON) -m pip install pybind11)
+endif
 PY_LDFLAGS  := $(shell $(PYTHON) -c 'import sysconfig; print("-L" + (sysconfig.get_config_var("LIBDIR") or "") + " " + (sysconfig.get_config_var("LIBS") or "") + " " + (sysconfig.get_config_var("SYSLIBS") or ""))') -lgomp
 
 # Compiler flags

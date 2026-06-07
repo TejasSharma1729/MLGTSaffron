@@ -7,6 +7,7 @@ import mlgt_sparse
 from mlgt_sparse import Hasher, MLGTSaffron
 HASHER_TYPES = ["MinHasher", "WeightedMinHasher", "BloomHashFunction", "SparseSRPHasher", "DenseSRPHasher"]
 from dataset_utils import read_binary_csr, DATASETS
+from data_dir import DATASETS_DIR
 
 import numpy as np
 from tqdm import tqdm
@@ -15,8 +16,7 @@ import os
 from argparse import ArgumentParser
 
 
-CUR_DIR: str = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR: str = os.path.join(CUR_DIR, "..", "data")
+DATA_DIR: str = DATASETS_DIR
 
 
 def hash_matrix(hasher: Hasher, M) -> np.ndarray:

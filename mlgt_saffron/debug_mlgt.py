@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os, sys, time
+from data_dir import DATASETS_DIR
 import numpy as np
 from tqdm import tqdm
 from mlgt_saffron import MLGTSaffron, SaffronIndex
@@ -41,7 +42,7 @@ def test_config(dataset, query_set, k, num_hashes, hash_bits, threshold, sparsit
 
 if __name__ == "__main__":
     dataset_name = "imagenet" 
-    data_path = f"../data/{dataset_name}/"
+    data_path = os.path.join(DATASETS_DIR, dataset_name)
     dataset = np.load(os.path.join(data_path, "X.npy"))
     query_set = np.load(os.path.join(data_path, "Q.npy"))
     k = 10

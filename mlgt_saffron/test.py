@@ -8,6 +8,7 @@ from numpy import array, ndarray, random as npr, linalg
 from tqdm import tqdm
 from typing import List, Tuple, Dict, Set, Literal, Optional, Callable, Iterable, Union, Any
 from argparse import ArgumentParser
+from data_dir import DATASETS_DIR
 
 CUR_DIR: str = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(CUR_DIR)
@@ -124,8 +125,8 @@ if __name__ == "__main__":
         "--data-path",
         "-p",
         type=str, 
-        default="../data/",
-        help="Path to the datasets' directory [default: ../data/]"
+        default=DATASETS_DIR,
+        help="Path to the datasets' directory [default: DATASETS_DIR]"
     )
     parser.add_argument(
         "--dataset",

@@ -9,4 +9,5 @@ import os
 REPO_ROOT: str = os.path.dirname(os.path.abspath(__file__))
 
 """ Set this to the directory where all datasets are stored."""
-DATASETS_DIR: str = os.path.join(REPO_ROOT, "data")
+# DATASETS_DIR: str = os.path.join(REPO_ROOT, "data")
+DATASETS_DIR: str = "/mnt/Drive1/Datasets_NNSearch"
